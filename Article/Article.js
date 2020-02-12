@@ -103,16 +103,16 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
 	}
 ];
-let articles = document.querySelector('.articles');
-let article = document.createElement('div');
-let h2 = document.createElement('h2');
-let date = document.createElement('p');
-let pOne = document.createElement('p');
-let pTwo = document.createElement('p');
-let pThree = document.createElement('p');
-let span = document.createElement('span');
 
 function createArticle(obj) {
+	let articles = document.querySelector('.articles');
+	let article = document.createElement('div');
+	let h2 = document.createElement('h2');
+	let date = document.createElement('p');
+	let pOne = document.createElement('p');
+	let pTwo = document.createElement('p');
+	let pThree = document.createElement('p');
+	let span = document.createElement('span');
 	article.classList.add('article');
 	date.classList.add('date');
 	span.classList.add('expandButton');
