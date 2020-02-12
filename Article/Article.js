@@ -85,17 +85,34 @@ const data = [
 		thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+	},
+	{
+		title: 'Peanut Butter Jelly TIME!',
+		date: 'Jan 1st, 2019',
+		firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+		secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+		thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
 	}
 ];
+let articles = document.querySelector('.articles');
+let article = document.createElement('div');
+let h2 = document.createElement('h2');
+let date = document.createElement('p');
+let pOne = document.createElement('p');
+let pTwo = document.createElement('p');
+let pThree = document.createElement('p');
+let span = document.createElement('span');
+
 function createArticle(obj) {
-	const articles = document.querySelector('.articles');
-	const article = document.createElement('div');
-	const h2 = document.createElement('h2');
-	const date = document.createElement('p');
-	const pOne = document.createElement('p');
-	const pTwo = document.createElement('p');
-	const pThree = document.createElement('p');
-	const span = document.createElement('span');
 	article.classList.add('article');
 	date.classList.add('date');
 	span.classList.add('expandButton');
@@ -115,13 +132,13 @@ function createArticle(obj) {
 	article.appendChild(pThree);
 	article.appendChild(span);
 
-	span.addEventListener('click', () => {
+	span.addEventListener('click', (obj) => {
 		article.classList.toggle('article-open');
 	});
 }
 
-let dataArr = data.map((x) => {
-	return createArticle(x);
+let dataArr = data.map((obj) => {
+	return createArticle(obj);
 });
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
