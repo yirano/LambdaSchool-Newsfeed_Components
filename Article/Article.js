@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
 	}
 ];
-function test(obj) {
+function createArticle(obj) {
 	const articles = document.querySelector('.articles');
 	const article = document.createElement('div');
 	const h2 = document.createElement('h2');
@@ -105,6 +105,7 @@ function test(obj) {
 	pOne.textContent = obj.firstParagraph;
 	pTwo.textContent = obj.secondParagraph;
 	pThree.textContent = obj.thirdParagraph;
+	span.style = 'width: 100px; height: 80px; top:0px';
 
 	articles.appendChild(article);
 	article.appendChild(h2);
@@ -113,10 +114,14 @@ function test(obj) {
 	article.appendChild(pTwo);
 	article.appendChild(pThree);
 	article.appendChild(span);
+
+	span.addEventListener('click', () => {
+		article.classList.toggle('article-open');
+	});
 }
 
 let dataArr = data.map((x) => {
-	return test(x);
+	return createArticle(x);
 });
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
