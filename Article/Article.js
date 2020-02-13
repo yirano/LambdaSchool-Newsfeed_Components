@@ -124,14 +124,8 @@ function createArticle(obj) {
 	pThree.textContent = obj.thirdParagraph;
 	span.style = 'width: 100px; height: 80px; top:0px';
 
-	articles.appendChild(article);
-	article.appendChild(h2);
-	article.appendChild(date);
-	article.appendChild(pOne);
-	article.appendChild(pTwo);
-	article.appendChild(pThree);
-	article.appendChild(span);
-
+	articles.append(article);
+	article.append(h2, date, pOne, pTwo, pThree, span);
 	span.addEventListener('click', (obj) => {
 		article.classList.toggle('article-open');
 	});

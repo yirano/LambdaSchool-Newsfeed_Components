@@ -1,13 +1,20 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
-  'Students',
-  'Faculty',
-  "What's New",
-  'Tech Trends',
-  'Music',
-  'Log Out'
-];
+let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', 'Log Out' ];
+
+function menu() {
+	const header = document.querySelector('.header');
+	const menu = document.createElement('div');
+	const ul = document.createElement('ul');
+
+	menu.classList.add('menu');
+
+	header.appendChild(menu);
+}
+
+let menuArr = menuItems.map((menuItem) => {
+	console.log(menuItem);
+});
 
 /* 
 
