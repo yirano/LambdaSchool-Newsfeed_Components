@@ -122,7 +122,8 @@ function createArticle(obj) {
 	pOne.textContent = obj.firstParagraph;
 	pTwo.textContent = obj.secondParagraph;
 	pThree.textContent = obj.thirdParagraph;
-	span.style = 'width: 100px; height: 80px; top:0px';
+	span.style = 'bottom:3px';
+	span.textContent = 'Toggle Article';
 
 	articles.append(article);
 	article.append(h2, date, pOne, pTwo, pThree, span);
