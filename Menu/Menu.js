@@ -19,7 +19,7 @@ let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', '
 		ul.appendChild(li);
 	});
 
-	menuBtn.addEventListener('click', () => {
+	menuBtn.addEventListener('click', function() {
 		menu.classList.toggle('menu--open');
 	});
 })(menuItems);

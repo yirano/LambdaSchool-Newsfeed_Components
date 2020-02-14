@@ -127,7 +127,7 @@ function createArticle(obj) {
 
 	articles.append(article);
 	article.append(h2, date, pOne, pTwo, pThree, span);
-	span.addEventListener('click', (obj) => {
+	span.addEventListener('click', function(obj) {
 		article.classList.toggle('article-open');
 	});
 }
