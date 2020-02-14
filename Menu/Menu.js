@@ -2,19 +2,27 @@
 
 let menuItems = [ 'Students', 'Faculty', "What's New", 'Tech Trends', 'Music', 'Log Out' ];
 
-function menu() {
+(function() {
 	const header = document.querySelector('.header');
+	const menuBtn = document.querySelector('.menu-button');
 	const menu = document.createElement('div');
 	const ul = document.createElement('ul');
+	let li;
 
 	menu.classList.add('menu');
 
 	header.appendChild(menu);
-}
+	menu.appendChild(ul);
+	menuItems.forEach((x) => {
+		li = document.createElement('li');
+		li.appendChild(document.createTextNode(x));
+		ul.appendChild(li);
+	});
 
-let menuArr = menuItems.map((menuItem) => {
-	console.log(menuItem);
-});
+	menuBtn.addEventListener('click', () => {
+		menu.classList.toggle('menu--open');
+	});
+})(menuItems);
 
 /* 
 
