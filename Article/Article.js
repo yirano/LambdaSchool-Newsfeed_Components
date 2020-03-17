@@ -133,7 +133,7 @@ function createArticle(obj) {
   return articles;
 }
 
-let dataArr = data.map(obj => {
+let dataArr = data.forEach(obj => {
   return createArticle(obj);
 });
 
